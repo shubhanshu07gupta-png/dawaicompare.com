@@ -1,0 +1,63 @@
+.medicine-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.medicine-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+.loading {
+  display: none;
+}
+.problem-box {
+  background-color: #fff;
+  border: 2px solid #00796b;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.problem-box h2 {
+  color: #d32f2f;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.problem-box ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+.problem-box li {
+  margin-bottom: 10px;
+}
+.solution {
+  text-align: center;
+  font-weight: bold;
+  color: #00796b;
+}
+.input-field {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+}
+.btn {
+  background-color: #4f46e5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background-color: #4338ca;
+}
+.header {
+  background-color: #00796b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}

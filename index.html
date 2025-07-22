@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+  <title>Dawai Compare – Pharmacy Medicine Database</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="container mx-auto px-4 py-8">
+    <header class="header mb-8">
+      <h1>You can compare your medicines here</h1>
+      <p>
+        This website is designed to make people aware about
+        <strong>generic medicines</strong>.
+      </p>
+    </header>
+
+    <div class="problem-box">
+      <h2>If you have these problems:</h2>
+      <ul>
+        <li>Your medicine is not available in the store</li>
+        <li>You want other generic medicine alternatives</li>
+        <li>You want cheaper medicine with the same effect and salt</li>
+      </ul>
+      <p class="solution">
+        Here you will get solutions to all these problems!
+      </p>
+    </div>
+
+    <!-- Search Section -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold text-gray-700">Search Medicines</h2>
+        <div class="flex gap-2 w-full max-w-sm">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by brand, salt, or form..."
+            class="input-field" />
+          <button id="clearBtn" class="btn">Clear</button>
+        </div>
+      </div>
+
+      <!-- Loader -->
+      <div id="loading" class="loading text-center py-4 hidden">
+        <div
+          class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-500 mx-auto"></div>
+        <p class="mt-2 text-gray-500 text-sm">Loading medicines...</p>
+      </div>
+
+      <!-- Results Grid -->
+      <div
+        id="medicineList"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Cards injected by JS -->
+      </div>
+      <p
+        id="noResults"
+        class="text-center text-gray-500 py-4 hidden">
+        No medicines found matching your search.
+      </p>
+    </div>
+
+    <!-- Add Medicine Section -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-xl font-semibold mb-4 text-gray-700">
+        Add New Medicine (Admin Only)
+      </h2>
+      <button id="openFormBtn" class="btn">Add Medicine</button>
+      <div id="addMedicineForm" class="hidden mt-4">
+        <form id="medicineForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label
+              for="brandName"
+              class="block text-sm font-medium text-gray-700 mb-1">
+              Brand Name
+            </label>
+            <input
+              type="text"
+              id="brandName"
+              class="input-field"
+              placeholder="e.g., Crocin"
+              required />
+          </div>
+          <div>
+            <label
+              for="saltName"
+              class="block text-sm font-medium text-gray-700 mb-1">
+              Salt/Compound Name
+            </label>
+            <input
+              type="text"
+              id="saltName"
+              class="input-field"
+              placeholder="e.g., Paracetamol"
+              required />
+          </div>
+          <div>
+            <label
+              for="companyName"
+              class="block text-sm font-medium text-gray-700 mb-1">
+              Company Name
+            </label>
+            <input
+              type="text"
+              id="companyName"
+              class="input-field"
+              placeholder="e.g., Micro Labs"
+              required />
+          </div>
+
+          <!-- Dosage Form -->
+          <div>
+            <label
+              for="dosageForm"
+              class="block text-sm font-medium text-gray-700 mb-1">
+              Dosage Form
+            </label>
+            <select id="dosageForm" class="input-field" required>
+              <option value="">Select...</option>
+              <option value="tablet">Tablet</option>
+              <option value="syrup">Syrup</option>
+              <option value="drop">Drop</option>
+              <option value="injection">Injection</option>
+            </select>
+          </div>
+
+          <!-- Dynamic Quantity -->
+          <div id="qtyWrapper" class="hidden">
+            <label
+              id="qtyLabel"
+              for="quantityInput"
+              class="block text-sm font-medium text-gray-700 mb-1">
+              Quantity
+            </label>
+            <input
+              type="number"
+              id="quantityInput"
+              class="input-field"
+              placeholder="Enter quantity" />
+          </div>
+
+          <div>
+            <label
+              for="price"
+              class="block text-sm font-medium text-gray-700 mb-1">
+              Price (₹)
+            </label>
+            <input
+              type="number"
+              id="price"
+              class="input-field"
+              placeholder="e.g., 20"
+              required />
+          </div>
+
+          <div class="md:col-span-2">
+            <button type="submit" class="btn w-full md:w-auto">Add Medicine</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="text-center text-gray-500 text-sm mt-8">
+      <p>
+        © 2023 Pharmacy Medicine Database - All data is stored locally in your
+        browser
+      </p>
+    </footer>
+  </div>
+  <script src="med.js"></script>
+</body>
+</html>
+
