@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Paracetamol",
+    "salt": "Paracetamol",
+    "brand": "Crocin",
+    "price": 25
+  },
+  {
+    "name": "Aspirin",
+    "salt": "Acetylsalicylic Acid",
+    "brand": "Disprin",
+    "price": 18
+  },
+  {
+    "name": "Pantop D",
+    "salt": "Pantoprazole + Domperidone",
+    "brand": "Pan D",
+    "price": 45
+  }
+]
